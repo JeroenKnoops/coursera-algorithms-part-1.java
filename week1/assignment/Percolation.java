@@ -1,3 +1,12 @@
+/******************************************************************************
+ * Author: Jeroen Knoops
+ * Written: 2013-09-08
+ *
+ * Compilation: $ javac Percolation.java
+ * Testing: $ java Percolation
+ *
+ * Data type to model physical percolation
+ ******************************************************************************/
 public class Percolation {
     
     private final int N; // Length of one side of the grid.

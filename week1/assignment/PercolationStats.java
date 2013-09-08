@@ -1,3 +1,12 @@
+/******************************************************************************
+ * Author: Jeroen Knoops
+ * Written: 2013-09-08
+ *
+ * Compilation: $ javac PercolationStats.java
+ * Testing: $ java PercolationStats 10 300
+ *
+ * Client to determine the p in our Percolation System. 
+ ******************************************************************************/
 public class PercolationStats {
 
    private double[] results;
@@ -14,7 +23,6 @@ public class PercolationStats {
         {
             n = 0;
             p = new Percolation(N);
-            // StdArrayIO.print(p.openArray());
             while (!p.percolates()) 
             {
                 do {
@@ -23,8 +31,6 @@ public class PercolationStats {
                 } while(p.isOpen(i, j));
                 p.open(i, j);
                 n++;
-                //StdOut.println("---======== " + n + " ========---");
-                //StdArrayIO.print(p.openArray());
             }
             results[t] = ((double) n) / (N*N);
         }
