@@ -23,6 +23,12 @@ public class QuickUnionImprovementUF {
         return root(p) == root(q);
     }
     
+    public String output() {
+        String ret = "";
+        for (int i = 0; i < id.length; i++) ret += Integer.toString(i);
+        return ret;
+    }
+    
     private int root(int i) {
         while (i != id[i]) {
             id[i] = id[id[i]];

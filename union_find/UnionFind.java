@@ -12,6 +12,7 @@ public class UnionFind {
                 StdOut.println(p + " " + q);
             }
         }
+        StdOut.println(uf.output());
     }
            
 }
