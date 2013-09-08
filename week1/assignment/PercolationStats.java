@@ -18,8 +18,8 @@ public class PercolationStats {
             while (!p.percolates()) 
             {
                 do {
-                    i = StdRandom.uniform(0, N);
-                    j = StdRandom.uniform(0, N);
+                    i = StdRandom.uniform(1, N+1);
+                    j = StdRandom.uniform(1, N+1);
                 } while(p.isOpen(i, j));
                 p.open(i, j);
                 n++;
@@ -50,9 +50,11 @@ public class PercolationStats {
        PercolationStats ps = new PercolationStats(N, T);
        StdOut.println("mean                    = " + ps.mean());
        StdOut.println("stddev                  = " + ps.stddev());
-       StdOut.println("95% confidence interval = " + ps.confidenceLo() + ", " + ps.confidenceHi());
+       StdOut.println("95% confidence interval = " + ps.confidenceLo() + ", " 
+                                                   + ps.confidenceHi());
    }
    
+   // method to calculate confidence interval.
    private double confidenceInterval()
    {
        return (1.96 * stddev()) / Math.sqrt(results.length);
