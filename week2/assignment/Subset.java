@@ -2,11 +2,23 @@
  * Author: Jeroen Knoops
  * Written: 2013-09-08
  *
- * Compilation: $ javac Percolation.java
- * Testing: $ java Percolation
+ * Compilation: $ javac Subset.java
+ * Testing: $ java Subset
  *
- * Data type to model physical percolation
+ * Client to test the RandomizedQueue.
  ******************************************************************************/
 public class Subset {
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        int N = Integer.parseInt(args[0]);
+        RandomizedQueue<String> rq = new RandomizedQueue<String>();
+        while (!StdIn.isEmpty())
+        {
+            String item = StdIn.readString();
+            rq.enqueue(item);
+        }
+        for (int i = 0; i < N; i++) {
+            String item = rq.dequeue();
+            StdOut.println(item);
+        }
+    }
 }
